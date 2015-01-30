@@ -3,7 +3,7 @@
   "description": "",
   "require": {
     "php": ">=5.3.0",
-    "nette/cache" : "*",
+    "nette/caching" : "*",
     "nette/forms" : "*"
   },
   "license": "BSD-3-Clause",
