@@ -1,0 +1,145 @@
+.nette-plupload {
+	width: 100%;
+}
+.nette-plupload .np-drop-zone {
+	position: relative;
+	background: #eee;
+	border: 1px solid #ccc;
+	min-height: 100px;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+.nette-plupload .np-drop-zone-text {
+	z-index: 0;
+	width: 100%;
+	font-weight: 300;
+	color: #bbb;
+	font-size: 24px;
+	line-height: 100px;
+	text-align: center;
+}
+.nette-plupload .np-drop-zone .np-drop-zone-text.collapsed {
+	min-height: 0;
+	font-size: 18px;
+	line-height: 50px;
+}
+.nette-plupload .np-add-file {
+	border: 1px solid #bbb;
+	background: #c0c0c0;
+	border-radius: 3px;
+	padding: 5px 25px;
+	color: #444;
+	text-decoration: none;
+	display: inline-block;
+}
+.nette-plupload .np-file-in-queue {
+	padding: 4px 10px;
+	background: #fff;
+	border-radius: 2px;
+	margin: 3px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	color: #555;
+	overflow: auto;
+}
+.nette-plupload .np-file-in-queue .name {
+	float: left;
+	width: 30%;
+	line-height: 30px;
+	font-weight: bold;
+}
+.nette-plupload .np-file-in-queue .progress-bar {
+	float: left;
+	width: 42%;
+	line-height: 30px;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+}
+.nette-plupload .np-file-in-queue .progress-bar .number {
+	position: absolute;
+	float: left;
+	width: 45px;
+	background: rgba(108, 162, 245, 0.5);
+	text-align: center;
+	font-weight: bold;
+	border-radius: 2px 0 0 2px;
+	color: white;
+}
+.nette-plupload .np-file-in-queue .progress-bar .progress {
+	width: 0;
+	height: 100%;
+	background-size: 18px 18px;
+	background-color: #7ce;
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	transparent 75%, transparent);
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	transparent 75%, transparent);
+	background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+	transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+	transparent 75%, transparent);
+}
+.nette-plupload .status-text {
+	width: 18%;
+	float: left;
+	line-height: 32px;
+	padding-left: 10px;
+}
+.nette-plupload .np-file-in-queue .remove-button {
+	width: 4%;
+	float: right;
+	text-align: right;
+}
+.nette-plupload .np-file-in-queue .remove-button a {
+	display: block;
+	padding: 8px 0;
+	background: url('../img/delete.png') no-repeat center center;
+	text-decoration: none;
+}
+.nette-plupload .np-add-file {
+	-moz-box-shadow: inset 0 1px 0 0 #54a3f7;
+	-webkit-box-shadow: inset 0 1px 0 0 #54a3f7;
+	box-shadow: inset 0 1px 0 0 #54a3f7;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background: -moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background: -webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background: -o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background: -ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7', GradientType=0);
+	background-color: #007dc1;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #124d77;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #154682;
+}
+.nette-plupload .np-add-file:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background: -moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background: -webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background: -o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background: -ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1', GradientType=0);
+	background-color: #0061a7;
+}
+.nette-plupload .np-add-file:active {
+	position: relative;
+	top: 1px;
+}
