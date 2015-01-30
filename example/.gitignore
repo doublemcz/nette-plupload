@@ -2,6 +2,7 @@ log/*
 temp/*
 vendor/*
 !vendor/others
+uploaded-files/*
 
 .DS_Store
 !.gitignore
