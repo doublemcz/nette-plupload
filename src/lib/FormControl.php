@@ -96,10 +96,13 @@ class FormControl extends Nette\Application\UI\Control implements Nette\Forms\IC
 		switch ($last) {
 			case 'g':
 				$value *= 1024;
+				break;
 			case 'm':
 				$value *= 1024;
+				break;
 			case 'k':
 				$value *= 1024;
+				break;
 		}
 
 		return $value;

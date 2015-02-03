@@ -34,8 +34,8 @@ class Form extends Nette\Application\UI\Form
 	{
 		parent::attached($presenter);
 		if (empty($this->uploadDir)) {
-			$this->cache = new Nette\Caching\Cache($this->presenter->context->getService('cacheStorage'));
-			$this->uploadDir = $this->presenter->context->expand('%appDir%') . '/../uploaded-files';
+			$this->cache = new Nette\Caching\Cache($this->presenter->context->getService('cacheStorage'), 'nette-plupload');
+			$this->uploadDir = $this->presenter->context->expand('%tempDir%') . '/nette-plupload-files';
 			if (!is_dir($this->uploadDir) && !mkdir($this->uploadDir, 0775, TRUE)) {
 				throw new \RuntimeException(sprintf('Cannot create upload dir %s', $this->uploadDir));
 			}
