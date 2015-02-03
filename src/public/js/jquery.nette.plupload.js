@@ -7,22 +7,32 @@
 
 		this.pluploadInitialized = true;
 		this.$element = $(element);
+		var nettePlupload = this;
+		element.getNettePlupload = function() {
+			return nettePlupload;
+		}
+
 		this.$dropZone = this.$element.find('.np-drop-zone');
 		this.options = this.$element.data('uploader-options');
 		this.queue = [];
 		this.isUploaded = false;
+		this.onFormSubmitBlock = null;
+		this.onUploadComplete = null;
+		this.$form = this.$element.closest('form');;
 		this.initForm();
 		this.initPlupload();
 	};
 
 	NettePlupload.prototype.initForm = function () {
 		var nettePlupload = this;
-		var $form = this.$element.closest('form');
-		if ($form.length) {
-			$form.on('submit', function (e) {
-				if (nettePlupload.uploader.total > 0 && !nettePlupload.isUploaded) {
+		if (this.$form.length) {
+			this.$form.on('submit', function (e) {
+				if (!nettePlupload.isUploaded) {
 					nettePlupload.uploader.start();
 					e.preventDefault();
+					if (nettePlupload.onFormSubmitBlock) {
+						nettePlupload.onFormSubmitBlock(this);
+					}
 				}
 			});
 		}
@@ -53,13 +63,6 @@
 			multi_selection: true,
 			drop_element: nettePlupload.$dropZone.prop('id'),
 			browse_button: nettePlupload.$element.find('.np-add-file').prop('id'),
-			//filters: {
-			//	max_file_size: '50mb',
-			//	mime_types: [{
-			//		title: "Excel files", extensions: "xlsx"
-			//	}]
-			//},
-
 			init: {
 				FilesAdded: function (uploader, files) {
 					this.isUploaded = false;
@@ -81,6 +84,9 @@
 				},
 				UploadComplete: function (uploader, file) {
 					nettePlupload.isUploaded = true;
+					if (nettePlupload.onUploadComplete) {
+						nettePlupload.onUploadComplete(this);
+					}
 				},
 				Error: function (uploader, error) {
 					var fileInQueue = nettePlupload.getFileInQueueById(error.file.id);
