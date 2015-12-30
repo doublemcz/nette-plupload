@@ -95,10 +95,10 @@ class FormControl extends Nette\Application\UI\Control implements Nette\Forms\IC
 		$last = strtolower($value[strlen($value) - 1]);
 		switch ($last) {
 			case 'g':
-				$value *= 1024;
+				$value *= 1024 * 1024 * 1024;
 				break;
 			case 'm':
-				$value *= 1024;
+				$value *= 1024 * 1024;
 				break;
 			case 'k':
 				$value *= 1024;
